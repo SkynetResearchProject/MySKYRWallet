@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Primary Meta Tags -->
+    <title>My PIVX Wallet</title>
+    <meta name="title" content="My PIVX Wallet" />
+    <meta name="description" content="The wallet of the future - Receive, Send, Stake and Exchange using a completely decentralized, open-source, battle-hardened PIVX wallet." />
+    <meta name="keywords" content="web,wallet,webwallet,crypto,cryptocurrency,opensource,oss,pivx,staking,masternodes,exchange,swap,decentralized" />
+
+    <link rel="manifest" href="manifest.json"/>
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://mypivxwallet.org/" />
+    <meta property="og:title" content="My PIVX Wallet" />
+    <meta property="og:description" content="The wallet of the future - Receive, Send, Stake and Exchange using a completely decentralized, open-source, battle-hardened PIVX wallet." />
+    <meta property="og:image" content="/logo_opaque-dark-bg.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mypivxwallet.org/" />
+    <meta property="twitter:title" content="My PIVX Wallet" />
+    <meta property="twitter:description" content="The wallet of the future - Receive, Send, Stake and Exchange using a completely decentralized, open-source, battle-hardened PIVX wallet." />
+    <meta property="twitter:image" content="/logo_opaque-dark-bg.png" />
+
+    <!-- Colour Theme -->
+    <meta name="msapplication-TileColor" content="#470e75" />
+    <meta name="theme-color" content="#470e75" />
+
+    <link rel="canonical" href="https://mypivxwallet.org/" />
+  </head>
+
+  <body>
+    <div id="page-container">
+      <div class="home-hero-dark gradientBackground"></div>
+      <div id="page-container-light" class="home-hero gradientBackground" style="opacity:1;"></div>
+      <div id="content-wrap">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark navbarSpecial" style="z-index: 2001;" id="navbar">
+          <div class="container">
+            <img onclick="MPW.openTab(event, 'keypair')" style="cursor: pointer;" class="nav-logo navbar-brand noselect" alt="PIVX" id="mpw-main-logo" />
+
+
+            <ul class="navbar-nav small-dark-bg navBarActions showMenuMobile">
+              <li class="nav-item">
+                <span class="nav-link ptr collapsed" id="navbarToggler" style="width:33px" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></span>
+              </li>
+            </ul>
+            
+            <div class="collapse navbar-collapse noselect" id="navbarNav">
+              <!-- MAIN NAVBAR -->
+              <div class="nav-centered">
+                <ul class="navbar-nav">
+                  <li class="nav-item"><span id="dashboard" class="nav-link tablinks" onclick="MPW.openTab(event, 'keypair')" data-i18n="navDashboard">Dashboard</span></li>
+                  <li class="nav-item"><span id="stakeTab" class="nav-link tablinks" onclick="MPW.openTab(event, 'StakingTab')" data-i18n="navStake">Stake</span></li>
+                  <li class="nav-item"><span id="masternodeTab" class="nav-link tablinks" onclick="MPW.openTab(event, 'Masternode')" data-i18n="navMasternode">Masternode</span></li>
+                  <li class="nav-item"><span id="governanceTab" class="nav-link tablinks" onclick="MPW.openTab(event, 'Governance')" data-i18n="navGovernance">Governance</span></li>
+                  <li class="nav-item"><span class="nav-link tablinks" onclick="MPW.openTab(event, 'Settings');" data-i18n="navSettings">Settings</span></li>
+                </ul>
+              </div>
+
+              <!-- SIDE NAVBAR -->
+              <div id="SideNavbar">
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- // NAVBAR -->
+
+        <!-- // QR MODAL -->
+        <div class="modal fade" id="qrModal" tabindex="-1" role="dialog" aria-labelledby="qrModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content exportKeysModalColor">
+              <div class="modal-header">
+                <div style="display: flex; justify-content: center; width: 100%;">
+                  <h5 class="modal-title" data-i18n="receive" id="qrModalLabel" style="font-family: 'Montserrat';">
+                    Receive
+                  </h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa-solid fa-xmark closeCross"></i>
+                </button>
+              </div>
+              <div class="modal-body center-text">
+                <code id="ModalQRLabel" class="wallet-code-new w-100" style="margin-bottom: 18px; padding-right: 35px;"></code>
+                <div id="ModalQR" style="font-family: 'Montserrat'; text-align: start; border-radius: 10px; border: 1px solid #42117e; background-color: #25183d; padding: 13px 13px;" class="auto-fit"></div>
+                <center>
+                  <button id="ModalQRReceiveTypeBtn" class="pivx-button-small" onclick="MPW.guiToggleReceiveType()" style="margin-top:25px; height: 42px; width: 250px;">
+                    <span class="buttoni-text">Change to Address</span>
+                  </button>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- // QR Reader -->
+        <div class="modal fade" id="qrReaderModal" tabindex="-1" role="dialog" aria-labelledby="qrReaderModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content exportKeysModalColor">
+              <div class="modal-header">
+                <h5 class="modal-title" id="qrReaderModalLabel">QR Scanner</h5>
+                <button id="closeQrReader" type="button" class="close" aria-label="Close">
+                  <i class="fa-solid fa-xmark closeCross"></i>
+                </button>
+              </div>
+              <div class="modal-body center-text">
+                <video id="qrReaderStream"></video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- // Wallet Breakdown -->
+        <div class="modal fade" id="walletBreakdownModal" tabindex="-1" aria-labelledby="walletBreakdownModalLabel" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content exportKeysModalColor">
+              <div class="modal-header" style="display: flex; justify-content: center; padding-bottom: 0px;">
+                <h5 data-i18n="balanceBreakdown" class="modal-title" id="walletBreakdownModalLabel">Balance Breakdown</h5>
+              </div>
+              <div class="modal-body center-text" style="padding-bottom: 0px; padding-top: 0px;">
+                <canvas id="walletBreakdownCanvas"></canvas>
+                <div id="walletBreakdownLegend" style="padding-left: 14px; padding-top: 20px;"></div>
+              </div>
+              <div class="modal-footer" style="padding-top: 0px; display: flex; justify-content: center;">
+                <button type="button" class="pivx-button-big-cancel" data-dismiss="modal" aria-label="Close">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <!-- // CONFIRM MODAL -->
+        <div class="modal" id="confirmModal" tabindex="-1" style="width: 100%; z-index: 2000; background-color: #201436db;" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+          <div id="confirmModalDialog" class="modal-dialog max-w-600" role="document">
+            <div id="confirmModalMain" class="modal-content modalMain">
+              <div class="modal-header" id="confirmModalHeader">
+                <h3 class="modal-title" id="confirmModalTitle" style="text-align: center; width: 100%; color: #8e21ff;"></h3>
+              </div>
+              <div id="confirmModalContent" class="modal-body center-text" style="color: #AF9CC6;">
+                <!-- JS populated modal content -->
+              </div>
+              <div class="modal-footer" id="confirmModalButtons">
+                <div id="confirmModalCancelButton" class="pivx-button-outline" style="float: left;">
+                  <span>Cancel</span>
+                </div>
+                <button data-i18n="popupConfirm" type="button" id="confirmModalConfirmButton" class="pivx-button-big" style="float: right;">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container containerMobileApp">
+          <div class="row no-gutters">
+            <div class="col-md-12 rm-pd">
+              <div class="tabcontent" style="display: block;">
+                <!-- PIVX TITLE SECTION -->
+                <div class="col-md-12 title-section float-left rm-pd">
+                  <h1 class="pivx-bold-title center-text">
+                    <div class="loadingDots">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <span data-i18n="loadingTitle">My PIVX Wallet is</span>
+                    <div data-i18n="loading">Loading</div>
+                  </h1>
+                </div>
+                <!-- // PIVX TITLE SECTION -->
+              </div>
+
+              <div id="DashboardTab"> </div>
+              <div id="StakingTab" class="tabcontent"> </div>
+	      <div id="Masternode" class="tabcontent"> </div>
+	      <div id="Governance" class="tabcontent"> </div>
+
+              <div id="Settings" class="tabcontent">
+                <div class="row">
+                  <div class="col-12">
+                    <ul class="settingsMenu">
+                      <li data-i18n="wallet" onclick="MPW.switchSettings('wallet')" id="settingsWalletBtn" class="active">Wallet</li>
+                      <li data-i18n="display" onclick="MPW.switchSettings('display')" id="settingsDisplayBtn">Display</li>
+                    </ul>
+
+                    <div id="settingsWallet" class="settingsContent">
+
+                      <label for="explorer" data-i18n="settingsExplorer">Choose an explorer:</label>
+                      <br />
+                      <select id="explorer" class="form-control" name="explorer">
+                        <!-- Populated via JS at DOM load (settings.js) -->
+                      </select>
+
+                      <br />
+
+                      <label for="node" data-i18n="settingsPivxNode">Choose a PIVX node:</label>
+                      <br />
+                      <select id="node" class="form-control" name="node">
+                        <!-- Populated via JS at DOM load (settings.js) -->
+                      </select>
+
+                      <br />
+
+                      <div class="custom-control custom-switch" style="margin-bottom:15px;">
+                        <input type="checkbox" class="custom-control-input" id="autoSwitchToggler" onclick="MPW.toggleAutoSwitch()">
+                        <label data-i18n="settingsAutoSelectNet" class="custom-control-label" for="autoSwitchToggler">Auto-select Explorers and Nodes</label>
+                      </div>
+
+                      <hr>
+                      <div id="changePassword-container" class="d-none">
+                        <label for="UNKNOWN" data-i18n="TODOTXT">Change your wallet's password</label>
+                        <br>
+                        <button class="pivx-button-small" style="height: 42px; width: 210px; margin: 0px; margin-top: 2px; margin-bottom: 12px;" id="changePasswordBtn" onclick="MPW.changePassword()">
+                          <span class="buttoni-text">  
+                            <span id="change-pwd-icon" class="change-pwd-icon"></span>
+                            Change Password
+                          </span>
+                        </button>
+                        <hr>
+                      </div>
+
+                      <label for="UNKNOWN" data-i18n="TODOTXT">Change your wallet's operational mode</label>
+
+                      <!-- Default switch -->
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="debugToggler" onclick="MPW.toggleDebug()">
+                        <label data-i18n="settingsToggleDebug" class="custom-control-label" for="debugToggler">Debug Mode</label>
+                      </div>
+
+                      <br>
+
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="testnetToggler" onclick="MPW.toggleTestnet()">
+                        <label data-i18n="settingsToggleTestnet" class="custom-control-label" for="testnetToggler">Testnet Mode</label>
+                      </div>
+
+                      <br>
+
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="autoLockModeToggler" onclick="MPW.toggleAutoLockWallet()">
+                          <label data-i18n="settingsToggleAutoLockWallet" class="custom-control-label" for="autoLockModeToggler">Auto Lock the Wallet</label>
+                      </div>
+                      
+                      <br>
+
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="advancedModeToggler" onclick="MPW.toggleAdvancedMode()">
+                        <label data-i18n="settingsToggleAdvancedMode" class="custom-control-label" for="advancedModeToggler">Advanced Mode</label>
+                        <p style="margin-top: 5px; color:#7C659D!important;"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 5px;"></i><span data-i18n="settingsToggleAdvancedModeSubtext">This unlocks deeper functionality and customisation, but may be overwhelming and potentially dangerous for unexperienced users!</p>
+                      </div>
+
+                      
+                      <div id="logOut-container">
+                        <hr>
+
+                        <label for="UNKNOWN" data-i18n="TODOTXT">Permanently delete your wallet</label>
+                        <br>
+                        <button class="pivx-button-small" style="height: 42px; width: 185px; margin: 0px; margin-top: 2px;" onclick="MPW.logOut()" data-testid="deleteWalletButton">
+                          <span class="buttoni-text">
+                            <span id="del-wallet-icon" class="del-wallet-icon"></span>
+                            Delete Wallet
+                          </span>
+                        </button>
+                      </div>
+
+                    </div>
+
+                    <div id="settingsDisplay" class="d-none settingsContent">
+                      <label for="currency" data-i18n="settingsCurrency">Choose a display currency:</label>
+                      <br />
+                      <select id="currency" class="form-control" name="currency">
+                        <!-- Populated via JS at Price Source data load (prices.js) -->
+                      </select>
+
+                      <p style="opacity: 0.6; margin-top: 5px;"><span data-i18n="priceProvidedBy">Price data provided by</span> <a class="active" href="https://pivxla.bz/oracle" target="_blank" rel="noopener">Labs Oracle</a></p>
+
+                      <br />
+
+                      <label for="displayDecimals" data-i18n="settingsDecimals">Balance Decimals:</label> <span class="sliderDisplay" id="sliderDisplay">(-)</span>
+                      <br />
+
+                      <div class="sliderContainer">
+                      </div>
+                      <input type="range" min="0" max="8" value="2" class="slider" id="displayDecimals" name="displayDecimals" data-toggle="tooltip" data-placement="top" title="0">
+
+                      <br />
+                      <br />
+
+                      <label for="translation" data-i18n="settingsLanguage">Choose a Language:</label>
+                      <br />
+                      <select id="translation" class="form-control" name="translation">
+                        <!-- Populated via JS at DOM load (settings.js) -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--
+      Alert
+    -->
+      <div class="alertPositioning" id="Alerts"></div>
+      <footer id="foot" style="padding-bottom: 32px;">
+        <div class="footer container">
+          
+          <div class="row" style="margin:0px;">
+            <div class="col-8 footFlexMob" style="color:#7C659E;">
+              <div class="w-50-mob">
+                <span id="version" class="ptr" onclick="MPW.renderChangelog();"></span> - © MIT <span id="copyrightYear">2024</span>
+              </div>
+              
+              <div class="w-50-mob textCenterMob">
+                <span style="cursor: pointer;" onclick="MPW.playMusic()" data-i18n="footerBuiltWithPivxLabs">Built with 💜 by PIVX Labs</span>
+              </div>
+            </div>
+
+            <div class="col-4 footer-icons text-right">
+              <a href="https://github.com/PIVX-Labs/MyPIVXWallet" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+              <a href="https://discord.gg/zTScGaGtgv" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://medium.com/@pivx-labs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-medium"></i></a>
+              <a href="https://x.com/PIVX_Labs" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+    </div>
+
+    <div class="blackBack blackBackHide d-none" id="blackBack"></div>
+    <div id="app"></div>
+  </body>
+</html>

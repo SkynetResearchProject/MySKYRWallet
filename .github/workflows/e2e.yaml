@@ -1,0 +1,51 @@
+name: E2E tests
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - master
+    paths-ignore:
+    - "*.md"
+    - LICENSE
+    - "*.yaml"
+  pull_request_target:
+    types: [labeled]
+    branches:
+      - master
+    paths-ignore:
+    - "*.md"
+    - LICENSE
+    - "*.yaml"
+
+jobs:
+  e2e:
+    name: Run e2e tests
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'safe-to-e2e-test') || github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+        with:
+          submodules: 'false'
+          lfs: 'false'
+      - name: Fetch lfs
+        env:
+          LFS_USERNAME: 'Duddino'
+          LFS_PASSWORD: ${{ secrets.LFS_PASSWORD }}
+        run: |
+          git submodule set-url cypress/fixtures/e2e "https://$LFS_USERNAME:$LFS_PASSWORD@mpw-git.duddino.com/Duddino/MPW-playbacks.git"
+          git submodule update --init --recursive
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: Install Node.js dependencies
+        run: |
+          cp chain_params.test.json chain_params.json
+          npm ci
+
+      - name: Run e2e tests
+        run: npm run cy:ci
+

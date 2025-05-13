@@ -1,0 +1,10 @@
+node_modules/
+index.template.html
+*.css
+*.yaml
+LICENSE
+*.md
+package-lock.json
+dist/
+coverage/
+cypress/snapshots/html
