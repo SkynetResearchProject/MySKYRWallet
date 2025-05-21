@@ -1,29 +1,25 @@
 {
     "main": {
         "name": "mainnet",
-        "collateralInSats": 1000000000000,
+        "collateralInSats": 40000000000000,
         "isTestnet": false,
-        "TICKER": "PIV",
-        "PUBKEY_PREFIX": ["D"],
+        "TICKER": "SKYR",
+        "PUBKEY_PREFIX": ["B", "C"],
         "STAKING_PREFIX": "S",
-        "PUBKEY_ADDRESS": [30],
+        "PUBKEY_ADDRESS": [25],
         "EXCHANGE_ADDRESS_PREFIX": [1, 185, 162],
         "STAKING_ADDRESS": [63],
-        "SECRET_KEY": 212,
-        "BIP44_TYPE": 119,
+        "SECRET_KEY": 153,
+        "BIP44_TYPE": 840,
         "BIP44_TYPE_LEDGER": 77,
-        "PROTOCOL_VERSION": 70927,
-        "MASTERNODE_PORT": 51472,
+        "PROTOCOL_VERSION": 70101,
+        "MASTERNODE_PORT": 16888,
         "SHIELD_PREFIX": "ps",
         "Explorers": [
-            { "name": "Duddino", "url": "https://explorer.duddino.com" },
-            { "name": "Duddino (2)", "url": "https://explorer2.duddino.com" },
-            { "name": "zkBitcoin", "url": "https://zkbitcoin.com" }
+            { "name": "Skynet", "url": "http://explorer.skynet-coin.com" }
         ],
         "Nodes": [
-            { "name": "PIVX Labs", "url": "https://rpc.pivxla.bz/mainnet" },
-            { "name": "Duddino", "url": "https://rpc.duddino.com/mainnet" },
-            { "name": "Duddino (2)", "url": "https://rpc2.duddino.com/mainnet" }
+            { "name": "Skynet-rpc", "url": "http://explorer.skynet-coin.com" }
         ],
         "Consensus": {},
         "coinbaseMaturity": 100,
@@ -37,29 +33,28 @@
     },
     "testnet": {
         "name": "testnet",
-        "collateralInSats": 1000000000000,
+        "collateralInSats": 40000000000000,
         "isTestnet": true,
-        "TICKER": "tPIV",
-        "PUBKEY_PREFIX": ["x", "y"],
+        "TICKER": "tSKYR",
+        "PUBKEY_PREFIX": ["m", "n"],
         "EXCHANGE_ADDRESS_PREFIX": [1, 185, 177],
         "STAKING_PREFIX": "W",
-        "PUBKEY_ADDRESS": [139],
+        "PUBKEY_ADDRESS": [111],
         "STAKING_ADDRESS": [73],
         "SECRET_KEY": 239,
         "BIP44_TYPE": 1,
         "BIP44_TYPE_LEDGER": 1,
-        "PROTOCOL_VERSION": 70927,
-        "MASTERNODE_PORT": 51474,
+        "PROTOCOL_VERSION": 70101,
+        "MASTERNODE_PORT": 26888,
         "SHIELD_PREFIX": "ptestsapling",
         "Explorers": [
-            { "name": "rockdev", "url": "https://testnet.rockdev.org" },
-            { "name": "duddino", "url": "https://testnet.duddino.com" }
+            { "name": "Skynet-dev", "url": "http://explorer.skynet-coin.com" }
         ],
         "Nodes": [
-            { "name": "Duddino", "url": "https://rpc2.duddino.com/testnet" }
+            { "name": "Skynet-dev-rpc", "url": "http://explorer.skynet-coin.com" }
         ],
         "Consensus": {},
-        "coinbaseMaturity": 15,
+        "coinbaseMaturity": 100,
         "budgetCycleBlocks": 144,
         "proposalFee": 5000000000,
         "proposalFeeConfirmRequirement": 3,

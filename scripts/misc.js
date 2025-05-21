@@ -222,7 +222,7 @@ export function isShieldAddress(strAddress) {
 
 /**
  * @param {string} strAddress
- * @return {boolean} If a straddress is a valid PIVX address,
+ * @return {boolean} If a straddress is a valid SKYR address,
  * i.e. shield, xpub or standard
  */
 export function isValidPIVXAddress(strAddress) {

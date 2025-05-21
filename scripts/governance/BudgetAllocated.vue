@@ -39,7 +39,7 @@ const { currency, price, allocatedBudget } = toRefs(props);
                     position: relative;
                     top: 1px;
                 "
-                >PIV</span
+                >SKYR</span
             ></span
         >
         <hr

@@ -80,14 +80,14 @@ watch(showExportModal, async (showExportModal) => {
  * @param {Object} o - Options
  * @param {'legacy'|'hd'|'hardware'} o.type - type of import
  * @param {string} o.secret
- * @param {nubmer?} [o.blockCount] Creation block count. Defaults to 4_200_000
+ * @param {nubmer?} [o.blockCount] Creation block count. Defaults to 1_618_337
  * @param {string} [o.password]
  */
 async function importWallet({
     type,
     secret,
     password = '',
-    blockCount = 4_200_000,
+    blockCount = 1_618_337,
 }) {
     try {
         /**
@@ -568,7 +568,7 @@ defineExpose({
                 </center>
             </div>
 
-            <!-- Redeem Code (PIVX Promos) -->
+            <!-- Redeem Code (SKYR Promos) -->
             <div
                 class="modal"
                 id="redeemCodeModal"
@@ -635,7 +635,7 @@ defineExpose({
                                         font-family: Montserrat !important;
                                     "
                                 >
-                                    PIVX Promos
+                                    SKYR Promos
                                     {{ translation.pivxPromos }}
                                 </p>
                                 <div id="redeemCodeUse">
@@ -888,7 +888,7 @@ defineExpose({
                     </div>
                 </div>
             </div>
-            <!-- // Redeem Code (PIVX Promos) -->
+            <!-- // Redeem Code (SKYR Promos) -->
 
             <!-- Contacts Modal -->
             <div
@@ -960,7 +960,7 @@ defineExpose({
                     :isEncrypt="wallet.isEncrypted"
                 />
                 <div class="row p-0">
-                    <!-- Balance in PIVX & USD-->
+                    <!-- Balance in SKYR & USD-->
                     <WalletBalance
                         :balance="balance"
                         :shieldBalance="shieldBalance"

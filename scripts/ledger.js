@@ -16,12 +16,12 @@ export class LedgerController {
     // Ledger Hardware wallet constants
     static LEDGER_ERRS = new Map([
         // Ledger error code <--> User-friendly string
-        [25870, 'Open the PIVX app on your device'],
-        [25873, 'Open the PIVX app on your device'],
-        [57408, 'Navigate to the PIVX app on your device'],
-        [27157, 'Wrong app! Open the PIVX app on your device'],
-        [27266, 'Wrong app! Open the PIVX app on your device'],
-        [27904, 'Wrong app! Open the PIVX app on your device'],
+        [25870, 'Open the SKYR app on your device'],
+        [25873, 'Open the SKYR app on your device'],
+        [57408, 'Navigate to the SKYR app on your device'],
+        [27157, 'Wrong app! Open the SKYR app on your device'],
+        [27266, 'Wrong app! Open the SKYR app on your device'],
+        [27904, 'Wrong app! Open the SKYR app on your device'],
         [27010, 'Unlock your Ledger, then try again!'],
         [27404, 'Unlock your Ledger, then try again!'],
     ]);
@@ -187,7 +187,7 @@ export class LedgerController {
             this.#transport = await TransportWebUSB.create();
             this.#hardwareWallet = new AppBtc({
                 transport: this.#transport,
-                currency: 'PIVX',
+                currency: 'SKYR',
             });
         }
     }

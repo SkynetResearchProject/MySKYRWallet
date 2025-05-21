@@ -120,9 +120,9 @@ async function getWalletDataset() {
  * @param {Array<WalletDatasetPoint>} arrBreakdown - The dataset to render
  */
 export async function generateWalletBreakdown(arrBreakdown) {
-    // Render the PIVX logo in the centre of the "Wallet Doughnut"
+    // Render the SKYR logo in the centre of the "Wallet Doughnut"
     const image = new Image();
-    const svg = (await import('../assets/icons/image-pivx-logo.svg')).default;
+    const svg = (await import('../assets/icons/icon-my-wallet.svg')).default;
     const url = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
     image.src = url;
     const logo_plugin = {

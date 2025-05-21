@@ -208,7 +208,7 @@ export async function start() {
         // Refresh blockchain data
         await refreshChainData();
 
-        // Fetch the PIVX prices
+        // Fetch the SKYR prices
         await refreshPriceDisplay();
     }, 15000);
 

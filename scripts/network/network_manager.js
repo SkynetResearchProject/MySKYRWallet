@@ -289,7 +289,7 @@ class NetworkManager {
      * @param {String} options.url - Url of the proposal
      * @param {Number} options.nPayments - Number of cycles this proposal is gonna last
      * @param {Number} options.start - Superblock of when the proposal is going to start
-     * @param {String} options.address - Base58 encoded PIVX address
+     * @param {String} options.address - Base58 encoded SKYR address
      * @param {Number} options.monthlyPayment - Payment amount per cycle in satoshi
      * @param {String} options.txid - Transaction id of the proposal fee
      */

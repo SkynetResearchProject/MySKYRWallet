@@ -29,11 +29,11 @@ describe('CreateMasternode component tests', () => {
         await wrapper.setProps({ balance: 9999.99 });
         const errorElement = wrapper.find('[data-testid="error"]');
         expect(errorElement.text()).toBe(
-            'MN_NOT_ENOUGH_COLLAT amount 0.01 ticker PIV'
+            'MN_NOT_ENOUGH_COLLAT amount 0.01 ticker SKYR'
         );
         await wrapper.setProps({ balance: 1234 });
         expect(errorElement.text()).toBe(
-            'MN_NOT_ENOUGH_COLLAT amount 8766.00 ticker PIV'
+            'MN_NOT_ENOUGH_COLLAT amount 8766.00 ticker SKYR'
         );
     });
 

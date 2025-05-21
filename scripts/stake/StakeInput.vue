@@ -96,7 +96,7 @@ async function selectContact() {
                                     border-left: 0px;
                                 "
                             >
-                                PIVX
+                                SKYR
                             </span>
                             <span
                                 class="input-group-text p-0"

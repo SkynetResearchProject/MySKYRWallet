@@ -25,7 +25,7 @@ export default {
     entry: './scripts/index.js',
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: './mpw.js',
+        filename: './scripts/mpw.js',
         library: 'MPW',
         libraryTarget: 'var',
         clean: true,
@@ -134,9 +134,9 @@ export default {
         new CopyPlugin({
             patterns: [
                 { from: 'manifest.json' },
-                { from: 'assets/icons' },
-                { from: 'assets/logo_opaque-dark-bg.png' },
-                { from: 'scripts/native-worker.js' },
+                { from: 'assets/icons', to: './assets/icons' },
+                { from: 'assets/logo_opaque-dark-bg.png', to: './assets/css/logo_opaque-dark-bg.png'  },
+                { from: 'scripts/native-worker.js', to: './scripts/native-worker.js' },
             ],
         }),
         new PreloadWebpackPlugin({

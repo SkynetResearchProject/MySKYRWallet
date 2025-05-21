@@ -1089,7 +1089,7 @@ export class Wallet {
         this.#shield = loadRes.pivxShield;
         this.#eventEmitter.emit('shield-loaded-from-disk');
         // Load operation was not successful!
-        // Provided data are not compatible with the latest PIVX shield version.
+        // Provided data are not compatible with the latest SKYR shield version.
         // Resetting the shield object is required
         if (!loadRes.success) {
             debugLog(
@@ -1131,7 +1131,7 @@ export class Wallet {
      * @param {boolean} [opts.useDelegatedInputs] - Whether or not cold stake inputs are to be used.
      *    Should be set if this is an undelegation transaction.
      * @param {string?} [opts.changeDelegationAddress] - Which address to use as change when `useDelegatedInputs` is set to true.
-     *     Only changes >= 1 PIV can be delegated
+     *     Only changes >= 1 SKYR can be delegated
      * @param {boolean} [opts.isProposal] - Whether or not this is a proposal transaction
      */
     createTransaction(
@@ -1394,7 +1394,7 @@ export class Wallet {
 
     /**
      * Handle the various transactions of a block
-     * @param block - block outputted from any PIVX node
+     * @param block - block outputted from any SKYR node
      * @param {number} blockHeight - the height of the block in the chain
      * @param {boolean} allowOwn - whether to add transaction that satisfy ownTransaction()
      */

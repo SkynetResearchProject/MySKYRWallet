@@ -154,7 +154,7 @@ function importMasternode() {
                             margin-bottom: 23px;
                             display: block;
                         "
-                        >This action requires <b>10,000 PIV</b> in
+                        >This action requires <b>400,000 SKYR</b> in
                         collateral.</span
                     >
                     <input class="hide-element" type="text" />

@@ -170,7 +170,7 @@ describe('Wallet transaction tests', () => {
     });
 
     it('Creates a cold stake tx correctly', async () => {
-        // Delegate 5250 PIV to test Stake Pre-Splitting
+        // Delegate 5250 SKYR to test Stake Pre-Splitting
         const value = 5250 * 10 ** 8;
         const tx = wallet.createTransaction(
             'SR3L4TFUKKGNsnv2Q4hWTuET2a4vHpm1b9',

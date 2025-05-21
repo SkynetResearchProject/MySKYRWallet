@@ -63,7 +63,7 @@ export class ParsedSecret {
                     );
                     if (!ok) throw new Error(msg);
                     const seed = await mnemonicToSeed(phrase, password);
-                    const pivxShield = await PIVXShield.create({
+                    const pivxShield = null; /*await PIVXShield.create({
                         seed,
                         // hardcoded value considering the last checkpoint, this is good both for mainnet and testnet
                         // TODO: take the wallet creation height in input from users
@@ -72,7 +72,7 @@ export class ParsedSecret {
                         // TODO: Change account index once account system is made
                         accountIndex: 0,
                         loadSaplingData: false,
-                    });
+                    });*/
                     return new ParsedSecret(
                         new HdMasterKey({
                             seed,

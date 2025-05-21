@@ -20,7 +20,7 @@ export const SAPLING_TX_VERSION = 3;
 export const MIN_PASS_LENGTH = 6;
 
 /** BIP21 coin prefix */
-export const BIP21_PREFIX = 'pivx';
+export const BIP21_PREFIX = 'skyr';
 
 /* chainparams */
 export const cChainParams = reactive({

@@ -42,7 +42,7 @@ for (const { Component, name } of [
             expect(
                 wrapper.find('[data-testid="governInstallments"]').text()
             ).toMatch(
-                /3\s*proposalPaymentsRemaining\s*30,000 PIV proposalPaymentTotal/
+                /3\s*proposalPaymentsRemaining\s*30,000 SKYR proposalPaymentTotal/
             );
         });
     });

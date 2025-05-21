@@ -27,7 +27,7 @@ const nProposalValue = computed(
                 ><b data-testid="proposalMonthlyPayment">{{
                     proposal.MonthlyPayment.toLocaleString('en-gb', ',', '.')
                 }}</b>
-                <span class="governMarked">PIV</span>
+                <span class="governMarked">SKYR</span>
                 <span
                     style="margin-left: 10px; margin-right: 2px"
                     class="governMarked governFiatSize"

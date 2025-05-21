@@ -1060,7 +1060,7 @@ progress[value]::-moz-progress-bar {
     margin-bottom: 20px;
 }
 
-/*PIVX WARNINGS*/
+/*SKYR WARNINGS*/
 .warning-message {
     display: none;
     background-color: #9021fe;
@@ -1086,7 +1086,7 @@ progress[value]::-moz-progress-bar {
     border-color: #8300ff;
 }
 
-/*PIVX TEXT CUSTOMS*/
+/*SKYR TEXT CUSTOMS*/
 .pivx-bold-title {
     line-height: 1.35em;
     font-size: calc(37.88235px + .70588vw);
@@ -1118,7 +1118,7 @@ progress[value]::-moz-progress-bar {
     text-align: center;
 }
 
-/*PIVX FEATURES SECTION*/
+/*SKYR FEATURES SECTION*/
 .pivx-feature-father {
     margin-top: 90px;
 }
@@ -1385,7 +1385,7 @@ a {
     border: none;
 }
 
-/*PIVX DASHBOARD*/
+/*SKYR DASHBOARD*/
 .dashboard-item {
     background: rgba(43, 9, 80, .38);
     border-radius: 12px;

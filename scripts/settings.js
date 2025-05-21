@@ -323,7 +323,7 @@ async function fillCurrencySelect(mapCurrencies) {
     let { displayCurrency } = await database.getSettings();
     if (!mapCurrencies.has(displayCurrency)) {
         // Currency not supported; fallback to USD
-        displayCurrency = 'usd';
+        displayCurrency = 'usdt';
         database.setSettings({ displayCurrency });
     }
     // And update the UI to reflect them

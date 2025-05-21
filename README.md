@@ -1,16 +1,16 @@
 <h2 align="center">
-  Send, Stake and Receive with PIVX's most universal wallet.
+  Send, Stake and Receive with SKYR's most universal wallet.
 </h2>
 
 <p align="center">
-  <a href="https://mypivxwallet.org/">Production</a> (Stable) | <a href="https://cheery-moxie-4f1121.netlify.app/">Bleeding-Edge</a> (Unstable)
+  <a href="https://skynet-coin.com/myskyrwallet/">Production</a> (Stable)
 </p>
 
+  Built by [PIVX Labs](https://github.com/PIVX-Labs) and adapted for Skynet-coin  by [SkynetResearchProject](https://github.com/SkynetResearchProject).
 ---
 
 <br>
 
-<img align="left" src="https://pivx.org/build/images/content/img_governance.png" width="150">
 
 ## Be your own Bank
 
@@ -26,15 +26,13 @@ MPW is a completely [non-custodial](https://www.bitcoin.com/get-started/custodia
 
 ## Universal and Portable
 
-MPW is completely universal and portable, at both a user-experience level & protocol-level, MPW is interopable with much of the functionality within PIVX, while also being portable enough to run on almost **any device in the world**.
+MPW is completely universal and portable, at both a user-experience level & protocol-level, MPW is interopable with much of the functionality within SKYR, while also being portable enough to run on almost **any device in the world**.
 
 <br>
 
 ---
 
 <br>
-
-<img align="left" src="https://pivx.org/build/images/content/img_privacy.png" width="150">
 
 ## Don't trust, Verify!
 
@@ -47,9 +45,10 @@ Alongside total codebase availability, MPW allows you to totally bunker-down, wi
 
 <br>
 
-<img align="left" src="https://pivx.org/build/images/content/img_slider_bars.png" width="150">
-
 ## By the Community, for the Community
+
+MPW is built by [PIVX Labs](https://github.com/PIVX-Labs) and adapted for Skynet-coin  by [SkynetResearchProject](https://github.com/SkynetResearchProject).
+
 
 MPW is built with love by [PIVX Labs](https://github.com/PIVX-Labs), a micro-DAO of [awesome people](https://github.com/PIVX-Labs/MyPIVXWallet/graphs/contributors) that build both FOSS and Proprietary software for the PIVX community to enjoy.
 

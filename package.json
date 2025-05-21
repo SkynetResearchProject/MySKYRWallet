@@ -1,7 +1,7 @@
 {
-    "name": "mypivxwallet",
+    "name": "myskirwallet",
     "version": "2.1.2",
-    "description": "Wallet for PIVX",
+    "description": "Wallet for SKYR",
     "main": "scripts/index.js",
     "type": "module",
     "scripts": {
@@ -23,19 +23,19 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/PIVX-Labs/MyPIVXWallet.git"
+        "url": "git+https://github.com/SkynetResearchProject/MySKYRWallet.git"
     },
     "keywords": [
         "crypto",
-        "PIVX",
+        "SKYR",
         "wallet"
     ],
-    "author": "PIVX Labs",
+    "author": "SKYR Labs",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/PIVX-Labs/MyPIVXWallet/issues"
+        "url": "https://github.com/SkynetResearchProject/MySKYRWallet/issues"
     },
-    "homepage": "https://github.com/PIVX-Labs/MyPIVXWallet#readme",
+    "homepage": "https://github.com/SkynetResearchProject/MySKYRWallet#readme",
     "devDependencies": {
         "@fluent/langneg": "^0.7.0",
         "@oreillymedia/cypress-playback": "^3.0.9",

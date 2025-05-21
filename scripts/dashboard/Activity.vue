@@ -209,7 +209,7 @@ async function parseTXs(arrTXs) {
             blockCount - cTx.blockHeight >=
                 (cTx.type === HistoricalTxType.STAKE
                     ? cChainParams.current.coinbaseMaturity
-                    : 6);
+                    : 7);
 
         // Take the icon, colour and content based on the type of the transaction
         let { icon, colour, content } = txMap.value[cTx.type];
@@ -223,6 +223,7 @@ async function parseTXs(arrTXs) {
                 colour = descriptor.colour;
                 content = descriptor.content;
                 amountToShow = descriptor.amount;
+				//console.log(amountToShow);
             } else {
                 let arrAddresses = cTx.receivers
                     .map((addr) => [wallet.isOwnAddress(addr), addr])
@@ -322,7 +323,7 @@ defineExpose({ update, reset, getTxCount, updateReward });
                 <span
                     style="font-size: 24px"
                     :data-i18n="rewards ? 'rewardHistory' : 'activity'"
-                    >{{ title }}</span
+                    >{{  translation.activity }}</span
                 >
                 <span
                     style="font-size: 20px"

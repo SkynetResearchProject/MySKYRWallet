@@ -18,7 +18,7 @@ import { useNetwork } from './composables/use_network.js';
 import pIconGift from '../assets/icons/icon-gift.svg';
 import pIconGiftOpen from '../assets/icons/icon-gift-opened.svg';
 
-/** The fee in Sats to use for Creating or Redeeming PIVX Promos */
+/** The fee in Sats to use for Creating or Redeeming SKYR Promos */
 export const PROMO_FEE = 10000;
 
 /** The maximum length of a rendered code before cutting off with a unicode ellipsis (…) */
@@ -118,7 +118,7 @@ export class PromoWallet {
 let fPromoRedeem = true;
 
 /**
- * Sets the mode of the PIVX Promos UI
+ * Sets the mode of the SKYR Promos UI
  * @param {boolean} fMode - `true` to redeem, `false` to create
  */
 export async function setPromoMode(fMode) {
@@ -223,7 +223,7 @@ const arrPromoCreationThreads = [];
 let fPromoIntervalStarted = false;
 
 /**
- * Create a new 'PIVX Promos' code with a webworker
+ * Create a new 'SKYR Promos' code with a webworker
  * @param {string} strCode - The Promo Code to create
  * @param {number} nAmount - The Promo Code amount in coins
  * @param {boolean} fAddRandomness - Whether to append Randomness to the code
@@ -449,11 +449,11 @@ export async function renderSavedPromos() {
     return { codes: arrCodes.length, html: strHTML };
 }
 
-/** Export and download all PIVX Promos data in to a CSV format */
+/** Export and download all SKYR Promos data in to a CSV format */
 export async function promosToCSV() {
     const arrCSV = [
         // Titles
-        ['Promo Code', 'PIV (Remaining)', 'Funding Address'],
+        ['Promo Code', 'SKYR (Remaining)', 'Funding Address'],
         // Content
     ];
 
@@ -670,12 +670,12 @@ export function resetRedeemPromo(nSeconds = 5) {
 }
 
 /**
- * @type {Worker?} - The thread used for the PIVX Promos redeem process
+ * @type {Worker?} - The thread used for the SKYR Promos redeem process
  */
 export let promoThread = null;
 
 /**
- * Derive a 'PIVX Promos' code with a webworker
+ * Derive a 'SKYR Promos' code with a webworker
  * @param {string} strCode - The Promo Code to derive
  */
 export async function redeemPromoCode(strCode) {
@@ -751,7 +751,7 @@ export async function redeemPromoCode(strCode) {
 }
 
 /**
- * Prompt a QR scan for a PIVX Promos code
+ * Prompt a QR scan for a SKYR Promos code
  */
 export async function openPromoQRScanner() {
     const cScan = await scanQRCode();

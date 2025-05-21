@@ -1,8 +1,8 @@
 {
-    "name": "My PIVX Wallet",
+    "name": "My SKYR Wallet",
     "short_name": "MPW",
     "start_url": ".",
-    "description": "Send, Stake and Receive with PIVX's most universal wallet. ",
+    "description": "Send, Stake and Receive with SKYR's most universal wallet. ",
     "orientation": "portrait",
     "display": "standalone",
     "icons": [

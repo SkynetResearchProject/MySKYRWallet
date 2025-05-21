@@ -3,9 +3,9 @@ services:
     pivx:
         build:
             context: .
-            dockerfile: docker/Dockerfile.pivx
+            dockerfile: docker/Dockerfile.skyr
         ports:
-            - 51470:51470
+            - 27890:27890
     explorer:
         build:
             context: .

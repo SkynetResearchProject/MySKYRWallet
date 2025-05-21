@@ -188,7 +188,7 @@ export class Database {
             debugError(DebugTopics.DATABASE, '---- end of account dump ----');
             createAlert(
                 'warning',
-                '<b>DB Update Error</b><br>Your wallet is safe, logs were dumped in your Browser Console<br>Please submit these privately to PIVX Labs Developers!'
+                '<b>DB Update Error</b><br>Your wallet is safe, logs were dumped in your Browser Console<br>Please submit these privately to SKYR Labs Developers!'
             );
             throw new Error(
                 'addAccount was called with with an invalid account'
@@ -209,7 +209,7 @@ export class Database {
             debugError(DebugTopics.DATABASE, '---- end of input dump ----');
             createAlert(
                 'warning',
-                '<b>DB Update Error</b><br>Logs were dumped in your Browser Console<br>Please submit these privately to PIVX Labs Developers!'
+                '<b>DB Update Error</b><br>Logs were dumped in your Browser Console<br>Please submit these privately to SkynetResearchProject Developers!'
             );
             throw new Error(
                 "updateAccount was called, but the account doesn't exist"
@@ -439,7 +439,7 @@ export class Database {
                     db.createObjectStore('settings');
                 }
 
-                // The introduction of PIVXPromos (safely added during <v2 upgrades)
+                // The introduction of SKYRPromos (safely added during <v2 upgrades)
                 if (oldVersion <= 1) {
                     db.createObjectStore('promos');
                 }
