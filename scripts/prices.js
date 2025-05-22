@@ -14,7 +14,7 @@ import { sleep } from './utils.js';
  *
  * @todo Allow an array of Oracle instances for better privacy and decentralisation
  */
-export const ORACLE_BASE = 'https://pivxla.bz/oracle/api/v1';
+export const QUTRADE_BASE = 'https://qutrade.io/api/v1';
 
 /**
  * An Oracle instance
@@ -58,14 +58,29 @@ export class Oracle {
      */
     async getPrice(strCurrency) {
         try {
-            const cReq = await fetch(`${ORACLE_BASE}/price/${strCurrency}`);
+			//{"currency":"usdt","value":0.171,"last_updated":1747279894} // from Oracle 
+			
+			let cCurrency = { currency: strCurrency, value: 0.0, last_updated: 1747278096 };
+			
+            const cReq = await fetch(`${QUTRADE_BASE}/market_data/?pair=skyr_${strCurrency}`);
 
             // If the request fails, we'll try to fallback to cache, otherwise return a safe empty state
             if (!cReq.ok) return this.getCachedPrice(strCurrency);
 
             /** @type {Currency} */
-            const cCurrency = await cReq.json();
-
+            var arrRes = await cReq.json();
+			cCurrency.currency = strCurrency;
+			if (strCurrency=='usdt'){
+				cCurrency.value = arrRes.list.skyr_usdt.ask;
+				cCurrency.last_updated =  arrRes.list.skyr_usdt.timestamp;
+			} else if (strCurrency=='trx'){
+				cCurrency.value = arrRes.list.skyr_trx.ask;
+				cCurrency.last_updated =  arrRes.list.skyr_trx.timestamp;			
+			}  else if (strCurrency=='s11'){
+				cCurrency.value = arrRes.list.skyr_s11.ask;
+				cCurrency.last_updated =  arrRes.list.skyr_s11.timestamp;			
+			}
+			
             // Update it
             this.mapCurrencies.set(strCurrency, cCurrency);
 
@@ -91,20 +106,51 @@ export class Oracle {
      * See {@link #fLoadedCurrencies} for more info on Oracle bandwidth saving.
      * @returns {Promise<Array<Currency>>} - A list of Oracle-supported display currencies
      */
-    async getCurrencies() {
+
+	async getCurrencies() {
         try {
-            const cReq = await fetch(`${ORACLE_BASE}/currencies`);
+            //const cReq = await fetch(`${QUTRADE_BASE}/currencies`);
+			//[{"currency":"aed","value":0.63079,"last_updated":1747278096},...]
 
             // If the request fails, we'll try to fallback to cache, otherwise return a safe empty state
-            if (!cReq.ok) return this.getCachedCurrencies();
+            //if (!cReq.ok) return this.getCachedCurrencies();
 
             /** @type {Array<Currency>} */
-            const arrCurrencies = await cReq.json();
+            //const arrCurrencies = await cReq.json();
+			
+			let arrCurrencies = [{ currency: 'usdt', value: 0.0, last_updated: 1747278096 }, { currency: 'trx', value: 0.0, last_updated: 1747278096 }, { currency: 's11', value: 0.0, last_updated: 1747278096 }];
+			//console.log("arrCurrencies "+arrCurrencies[0].currency+" "+arrCurrencies[0].value);
+			
+			var cReq = await fetch('https://qutrade.io/api/v1/market_data/?pair=skyr_usdt');
+			if (!cReq.ok) return this.getCachedCurrencies();;
+	
+			var arrRes = await cReq.json();
+			arrCurrencies[0].currency = "usdt";
+			arrCurrencies[0].value = arrRes.list.skyr_usdt.ask;
+			arrCurrencies[0].last_updated = arrRes.list.skyr_usdt.timestamp;
+	
+			cReq = await fetch('https://qutrade.io/api/v1/market_data/?pair=skyr_trx');
+			if (!cReq.ok) return this.getCachedCurrencies();;
+	
+			arrRes = await cReq.json();
+			arrCurrencies[1].currency = "trx";
+			arrCurrencies[1].value = arrRes.list.skyr_trx.ask;
+			arrCurrencies[1].last_updated = arrRes.list.skyr_trx.timestamp;
+			
+			cReq = await fetch('https://qutrade.io/api/v1/market_data/?pair=skyr_s11');
+			if (!cReq.ok) return this.getCachedCurrencies();;
+	
+			arrRes = await cReq.json();
+			arrCurrencies[2].currency = "s11";
+			arrCurrencies[2].value = arrRes.list.skyr_s11.ask;
+			arrCurrencies[2].last_updated = arrRes.list.skyr_s11.timestamp;
 
             // Loop each currency and update the cache
             for (const cCurrency of arrCurrencies) {
+				//console.log("cCurrency.currency, cCurrency = " + cCurrency.currency + cCurrency);
                 this.mapCurrencies.set(cCurrency.currency, cCurrency);
             }
+			//console.log("this.mapCurrencies = "+this.mapCurrencies);
 
             // Now we've loaded all currencies: we'll flag it and use the lower bandwidth price fetches in the future
             this.#fLoadedCurrencies = true;
@@ -116,12 +162,12 @@ export class Oracle {
             return this.getCachedCurrencies();
         }
     }
-
+	
     async load() {
-        while (!this.#fLoadedCurrencies) {
+        //while (!this.#fLoadedCurrencies) {
             await this.getCurrencies();
-            if (!this.#fLoadedCurrencies) await sleep(5000);
-        }
+        //    if (!this.#fLoadedCurrencies) await sleep(5000);
+        //}
         // Update any listeners for the full currency list (Settings, etc)
         getEventEmitter().emit('currency-loaded', this.mapCurrencies);
         // Update the balance to render the price instantly
