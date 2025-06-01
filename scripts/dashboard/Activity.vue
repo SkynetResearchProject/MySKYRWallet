@@ -313,7 +313,7 @@ defineExpose({ update, reset, getTxCount, updateReward });
             <span
                 style="
                     font-family: 'Montserrat Regular';
-                    color: rgb(233, 222, 255);
+                    color: #F1F1F1;
                     display: flex;
                     justify-content: center;
                     margin-bottom: 24px;

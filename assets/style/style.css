@@ -19,7 +19,7 @@ button {
 }
 
 body {
-    background-color: #150c25;
+    background-color: #323333;
     color: #f2f8fa;
 }
 
@@ -37,7 +37,7 @@ pre {
 textarea,
 input {
     font-family: monospace !important;
-    background-color: #E9DEFF !important;
+    background-color: #F1F1F1 !important;
     border-radius: 6px;
     margin-bottom: 5px;
     width: 100%;
@@ -93,13 +93,13 @@ input::-webkit-inner-spin-button {
 
 button {
     color: rgba(255, 255, 255, 0.65);
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 12px 25px 12px;
-    background-color: #380c6a;
+    background-color: #090d70;
     border-style: solid;
     border-width: 1px;
     margin: 1px;
-    border-color: #7300ff;
+    border-color: #343a46;
     text-align: center;
     font-size: 16px;
     outline: 0;
@@ -107,7 +107,7 @@ button {
 }
 
 progress {
-    color: #7300ff;
+    color: #343a46;
     border-radius: 6px;
     border: none;
 }
@@ -117,8 +117,8 @@ progress[value]::-webkit-progress-value {
             rgba(255, 255, 255, 0.25),
             rgba(0, 0, 0, 0.25)),
         -webkit-linear-gradient(left,
-            #380c6a,
-            #7300ff);
+            #090e34,
+            #343a46);
 
     border-radius: 6px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
@@ -130,8 +130,8 @@ progress[value]::-moz-progress-bar {
             rgba(255, 255, 255, 0.25),
             rgba(0, 0, 0, 0.25)),
         -moz-linear-gradient(left,
-            #380c6a,
-            #7300ff);
+            #090e34,
+            #343a46);
 
     border-radius: 6px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
@@ -182,7 +182,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .small-dark-bg {
-    background: linear-gradient(#32135C 0 0) padding-box, linear-gradient(to top, #771DF3, #9631F4) border-box;
+    background: linear-gradient(#090e34 0 0) padding-box, #f2f8fa border-box;
     border: 3px solid transparent;
     border-radius: 100px;
     display: flex;
@@ -228,7 +228,7 @@ progress[value]::-moz-progress-bar {
     padding-left: 7px;
     border-left-style: solid;
     border-left-width: 6px;
-    border-left-color: #9221ff;
+    border-left-color: #FFFFE9;
     height: 6px;
     display: inline-block;
     position: relative;
@@ -239,8 +239,8 @@ progress[value]::-moz-progress-bar {
     padding-left: 7px;
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #9221ff;
-    color:#E9DEFF;
+    border-left-color: #FFFFE9;
+    color:#F1F1F1;
     margin-bottom: 13px;
     font-size: 21px;
 }
@@ -252,9 +252,9 @@ progress[value]::-moz-progress-bar {
 }
 
 .large-box {
-    background: rgba(43, 9, 80, 0.55);
+    /*background: rgba(43, 9, 80, 0.55);*/
     border-radius: 8px;
-    border-color: #6222ab;
+    /*border-color: #6222ab;*/
     border-width: 1px;
     border-style: solid;
     margin: 5px;
@@ -441,7 +441,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .active {
-    color: #9221FF !important;
+    color:green !important;
 }
 
 /* Style the tab content */
@@ -523,7 +523,13 @@ progress[value]::-moz-progress-bar {
     margin: 20px auto 0 auto !important;
     width: 95%;
     height: 125px;
-    background: linear-gradient(0.25turn, rgba(122, 122, 122, 0.5), rgba(115, 0, 255, 0.4));
+    background: #090e34;
+}
+
+.stake-inbox {
+	background-color: #3a3e42;
+    border: 2px solid #545454;
+    border-radius: 5px;
 }
 
 .balance-title {
@@ -814,7 +820,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .navbarSpecial {
-    background: linear-gradient(90deg, #1a122d, #211138);
+    background: linear-gradient(90deg,#090234,#090e34);
     box-shadow: 0 0px 15px 3px #0e071a;
     position: fixed;
     width: 100%;
@@ -831,7 +837,7 @@ progress[value]::-moz-progress-bar {
     font-family: Montserrat, sans-serif;
     height: auto;
     padding: 8px 18px;
-    background-image: linear-gradient(183deg, #7B1FD8, #6D1ED8);
+    background-color: #090d70;
     position: relative;
     z-index: 1;
     line-height: 1.25em;
@@ -861,7 +867,7 @@ progress[value]::-moz-progress-bar {
     font-family: Montserrat, sans-serif;
     height: auto;
     padding: 14px 20px;
-    background-image: linear-gradient(183deg, #7B1FD8, #6D1ED8);
+    background-color: #090d70;
     position: relative;
     z-index: 1;
     line-height: 1.25em;
@@ -891,7 +897,7 @@ progress[value]::-moz-progress-bar {
     outline: none;
     margin: 5px;
     font-family: Montserrat, sans-serif;
-    background: linear-gradient(#32135C 0 0) padding-box, linear-gradient(to top, #771DF3, #9631F4) border-box;
+    background: linear-gradient(#090d70 0 0) padding-box, #090dc0 border-box;
     height: auto;
     padding: 13px 20px;
     position: relative;
@@ -1052,7 +1058,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .home-hero-dark {
-    background: linear-gradient(135deg, #1D1231 0%, #050308 15%, #0E081A 15%, #0F0A1C 37%, #120D20 37%, #0B0914 59%, #100C1E 59%, #0C0717 81%, #120920 81%, #120920 100%);
+    background: linear-gradient(135deg, #1D0000 0%, #050308 15%, #0E081A 15%, #0F0A1C 37%, #120D20 37%, #0B0914 59%, #100C1E 59%, #0C0717 81%, #120920 81%, #120920 100%);
     background-attachment: fixed;
 }
 
@@ -1107,11 +1113,11 @@ progress[value]::-moz-progress-bar {
     display: block;
     line-height: 1.2em;
     font-weight: 300;
-    color:#E9DEFF;
+    color:#F1F1F1;
 }
 
 .pivx-bold-title div {
-    color:#E9DEFF;
+    color:#F1F1F1;
 }
 
 .center-text {
@@ -1177,7 +1183,7 @@ progress[value]::-moz-progress-bar {
 
 .iconList svg,
 .publicSwitchIcon svg {
-    fill:#9221FF!important;
+    fill:#FFFFE9!important;
 }
 
 .iconList svg {
@@ -1206,7 +1212,7 @@ progress[value]::-moz-progress-bar {
     height: 20px;
     max-height: 24px;
     margin: 0;
-    fill: #9621FF;
+    fill: #FFFFE9;
     top: 8px;
     position: relative;
 }
@@ -1237,7 +1243,7 @@ progress[value]::-moz-progress-bar {
     height: 16px;
     max-height: 16px;
     margin: 0;
-    fill: #9221FF;
+    fill: #FFFFE9;
     position: relative;
     top: 3px;
 }
@@ -1279,12 +1285,14 @@ progress[value]::-moz-progress-bar {
 
 .buttoni-text {
     vertical-align: top;
+	text-align: center;
     display: inline-block;
     padding: 1px 0 0;
 }
 
 .buttoni-arrow {
     vertical-align: top !important;
+	text-align: center;
     display: inline-block;
     padding: 4px 0 4px 10px;
     -webkit-transition: all .2s ease-out;
@@ -1302,7 +1310,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .purple-icon-link {
-    color: #9621ff;
+    color: #FFFFE9;
 }
 
 .purple-icon-link,
@@ -1387,7 +1395,7 @@ a {
 
 /*SKYR DASHBOARD*/
 .dashboard-item {
-    background: rgba(43, 9, 80, .38);
+    background: #3a3e42; /*#14191f; #3a3e42; rgba(43, 9, 80, .38);*/
     border-radius: 12px;
     padding: 23px;
     text-align: center;
@@ -1395,7 +1403,7 @@ a {
     margin-bottom: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
-    border: 2px solid #3c1170;
+    border: 2px solid #545454;
     transition: all .125s ease-in-out;
     height:100%;
     cursor:pointer;
@@ -1403,7 +1411,7 @@ a {
 
 
 .dashboard-item:hover {
-    border: 2px solid #9221ff;
+    border: 2px solid #FFFFE9;
 }
 
 .send-eligibility-section .container .column-padded-around .coinstat-icon,
@@ -1438,7 +1446,7 @@ a {
     width: 75px;
     max-height: 75px;
     padding: 0;
-    fill: #9621ff;
+    fill: #FFFFE9;
 }
 
 .dashboard-title {
@@ -2478,11 +2486,10 @@ a {
 }
 
 
-
 .dcWallet-balances {
     max-width: 310px;
-    background-color: #301f4c61;
-    border: 2px solid #31135A;
+    background-color: #3a3e42;
+    border: 2px solid #545454;
     border-radius: 10px;
     padding: 3px 0px 0px 0px;
     backdrop-filter: blur(4px);
@@ -2524,8 +2531,8 @@ a {
 .dcWallet-activity {
     max-width: 95svw;
     padding: 14px 16px;
-    background-color: #301f4c61;
-    border: 2px solid #31135A;
+    background-color: #3a3e42; /*#301f4c61;*/
+    border: 2px solid #545454; /*#31135A;*/
     border-radius: 10px;
     backdrop-filter: blur(4px);
 }
@@ -2554,7 +2561,7 @@ a {
     padding: 8px 12px;
     display: flex;
     line-height: 18px;
-    background: linear-gradient(#32135C 0 0) padding-box, linear-gradient(to top, #771DF3, #9631F4) border-box;
+    background: linear-gradient(#090e34 0 0) padding-box, #090ec0 border-box;
     border: 3px solid transparent;
     border-radius: 100px;
 }
@@ -2617,8 +2624,8 @@ a {
 
 .dcWallet-topRightMenu .dropdown-move .dropdown-menu {
     backdrop-filter: blur(5px);
-    background-color: #281c40;
-    border: 1px solid #6d1fd6;
+    background-color: #29333d;
+    border: 1px solid #545454;
 }
 
 .dcWallet-topRightMenu .dropdown-move .dropdown-menu .dropdown-item span {
@@ -2651,18 +2658,18 @@ a {
 .modal-title-new {
     text-align: center;
     width: 100%;
-    color: rgb(142, 33, 255)!important;
+    color: #ffffe9 !important;
 }
 
 .exportKeysModalColor {
-    background-color: #25183d;
+    background-color: #29333d;
     backdrop-filter: blur(5px);
     color: #fff;
     max-height: 100%;
 }
 
 .exportKeysModalColor h3 {
-    color: #d5adff !important;
+    color: ##ffffe9 !important;
 }
 
 .dcWallet-privateKeyDiv {
@@ -2724,7 +2731,7 @@ a {
 .icoCol,
 .dcWallet-topLeftMenu .topCol,
 .dcWallet-topRightMenu .topCol {
-    color: #9621FF;
+    color: #FFFFE9;
 }
 
 .iconBtn svg {
@@ -2733,7 +2740,7 @@ a {
 
 .dashboardActionIcon svg {
     height:25px;
-    fill:#9621FF;
+    fill:#FFFFE9;
     margin-bottom: 6px;
 }
 
@@ -2746,7 +2753,7 @@ a {
 
 .giftIconsClosed svg {
     height:16px;
-    fill:#9621FF;
+    fill:#FFFFE9;
     position:relative;
     top:-2px;
 }
@@ -2860,14 +2867,14 @@ input {
     padding: 9px 20px 9px;
     font-family: Montserrat;
     letter-spacing: .5px;
-    color: #E9DEFF;
-    background: rgba(100, 16, 199, .3);
+    color: #F1F1F1;
+    background: #14191f;
     border: 0px;
     font-weight: 500;
 }
 
 .stakingTx thead {
-    border: 1px rgba(146, 33, 255, .3) solid;
+    border: 1px #545454 solid;
 }
 
 .stakingTx tbody tr td {
@@ -2975,17 +2982,17 @@ input {
 }
 
 ::-webkit-scrollbar-track {
-    background: #1B102E;
+    background: #545454;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #9221FF;
+    background: #545454;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #8916f5;
+    background: #606070;
 }
 
 @media (min-width: 768px) {
@@ -3001,7 +3008,7 @@ input {
 
 select.form-control {
     color: #6410c7;
-    background-color: #e9deff;
+    background-color: #F1F1F1;
     border: 2px solid #AF9CC6;
     font-weight: 500;
     border-radius: 8px;
@@ -3012,15 +3019,15 @@ select.form-control {
 
 select.form-control:focus {
     color: #6410c7;
-    background-color: #e9deff;
+    background-color: #F1F1F1;
     border: 2px solid #AF9CC6;
     font-weight: 500;
     box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 22%);
 }
 
 select.form-control option {
-    background-color: #e9deff;
-    color:#9221FF;
+    background-color: #F1F1F1;
+    color:#FFFFE9;
 }
 
 .settingsMenu {
@@ -3044,7 +3051,7 @@ select.form-control option {
     padding-top: 9px;
     padding-bottom: 9px;
     height: 43px;
-    border:1px solid #41117B;
+    border:1px solid #29333d;
     position: relative;
     top: 10px;
 
@@ -3054,7 +3061,7 @@ select.form-control option {
 
 .settingsMenu li:hover {
     background: linear-gradient(180deg, rgba(124,31,216,1) 0%, rgba(116,31,216,1) 39%, rgba(109,30,216,1) 100%);
-    background-color: #422E59;
+    background-color: #281D3D;
     cursor: pointer;
     color: #fff !important;
 }
@@ -3063,7 +3070,7 @@ select.form-control option {
     background:none;
     background-color: #281D3D;
     margin-bottom: -1px;
-    border:1px solid #41117B;
+    border:1px solid #29333d;
     border-bottom:0px;
     color:#9021FF;
     top: 0px;
@@ -3082,7 +3089,7 @@ select.form-control option {
     background:none;
     background-color: #281D3D;
     margin-bottom: -1px;
-    border:1px solid #41117B;
+    border:1px solid #29333d;
     border-bottom:0px;
     color:#9021FF!important;
     top: 0px;
@@ -3101,7 +3108,7 @@ select.form-control option {
     padding-left: 17px;
     padding-right: 17px;
     font-size: 15px;
-    border:1px solid #41117B;
+    border:1px solid #29333d;
 }
 
 .settingsContent .header-title {
@@ -3809,7 +3816,7 @@ select.form-control option {
 .pIconBin svg {
     height:19px;
     width:19px;
-    fill:#9221FF;
+    fill:#FFFFE9;
 }
 
 .contactsList .addContact .contactName input,
@@ -3898,7 +3905,7 @@ select.form-control option {
 
 .modal-content {
     border-radius: 10px;
-    border: 1px solid #42117e;
+    border: 1px solid #545454;
 }
 
 .modal-title {
@@ -3913,7 +3920,7 @@ select.form-control option {
 
 .modalContents .topText {
     padding: 0px 39px;
-    color: #AF9CC6;
+    color: #FFFFE9;
     font-size: 16px;
     font-weight: 500;
     display: block;
@@ -3933,7 +3940,7 @@ select.form-control option {
 }
 
 .rewardsBadge {
-    background-color: #5811AB;
+    background-color: #545454;
     border-radius: 8px;
     margin-left: 18px;
     padding: 4px 13px;
@@ -4022,7 +4029,7 @@ textarea::placeholder {
 
 .tranferModal .input-group-text {
     background-color: #7f20ff;
-    color: #E9DEFF;
+    color: #F1F1F1;
     border: 2px solid #af9cc6;
     border-left: 0px;
 }
@@ -4058,7 +4065,7 @@ textarea::placeholder {
 .cameraIcon svg {
     height:22px;
     width:22px;
-    fill:#e9deff;
+    fill:#F1F1F1;
 }
 
 .masternodeTable tbody tr td .wallet-code {
@@ -4075,7 +4082,7 @@ textarea::placeholder {
     fill:#6410c7;
 }
 .wallet-code-new {
-    background-color: #e9deff;
+    background-color: #F1F1F1;
     color: #6410c7;
     border-radius: 7px;
     border: 1px solid #af9cc6;
@@ -4092,7 +4099,7 @@ textarea::placeholder {
     justify-content: center;
     margin-top: 33px;
     margin-bottom: 35px;
-    color:#E9DEFF;
+    color:#F1F1F1;
 }
 
 .modal {
@@ -4135,6 +4142,7 @@ textarea::placeholder {
     z-index: 5000;
 }
 
+/*
 .gradientBackground {
     position: absolute;
     top: 0;
@@ -4143,6 +4151,7 @@ textarea::placeholder {
     height: 100%;
     transition: all 0.250s ease-in-out;
 }
+*/
 
 .navbar::after {
     content: '';
@@ -4218,7 +4227,7 @@ textarea::placeholder {
 .loadingDots span {
     height:16px;
     width:16px;
-    background-color:#9621FF;
+    background-color:#FFFFE9;
     border-radius:100px;
     animation: fade 1.5s infinite ease-in-out;
 }
@@ -4252,7 +4261,7 @@ textarea::placeholder {
 }
 
 .footer-icons i {
-    color:#7F20FF;
+    color:#d5bafa;
 }
 
 .footer-icons a {

@@ -101,13 +101,7 @@ function submit() {
                     margin-bottom: 35px;
                 "
             >
-                <div
-                    style="
-                        background-color: #32224e61;
-                        border: 2px solid #361562;
-                        border-radius: 5px;
-                    "
-                >
+                <div class="stake-inbox">
                     <div>
                         <img
                             :src="logo"

@@ -315,13 +315,13 @@ function restoreWallet() {
                 "
             >
                 <div
-                    style="
-                        background-color: #32224e61;
-                        border: 2px solid #361562;
-                        border-top-left-radius: 10px;
-                        border-top-right-radius: 10px;
-                    "
-                >
+                style="
+                    background-color: #3a3e42;
+					border: 2px solid #545454;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+                "				
+			>
                     <div
                         class="immatureBalanceSpan"
                         v-if="
@@ -360,8 +360,8 @@ function restoreWallet() {
                 </div>
                 <div
                     style="
-                        background-color: #32224e61;
-                        border: 2px solid #361562;
+                        background-color: #3a3e42;
+                        border: 2px solid #545454;
                         border-bottom: none;
                         border-top: none;
                     "
@@ -415,8 +415,8 @@ function restoreWallet() {
                 </div>
                 <div
                     style="
-                        background-color: #32224e61;
-                        border: 2px solid #361562;
+                        background-color: #3a3e42;
+                        border: 2px solid #545454;
                         border-bottom-left-radius: 10px;
                         border-bottom-right-radius: 10px;
                     "
@@ -501,8 +501,8 @@ function restoreWallet() {
                 style="
                     display: flex;
                     font-size: 15px;
-                    background-color: #3a0c60;
-                    border: 1px solid #9f00f9;
+                    background-color: #3a3e42;
+                    border: 1px solid #545454;
                     padding: 8px 15px 10px 15px;
                     border-radius: 10px;
                     color: #d3bee5;
@@ -515,7 +515,7 @@ function restoreWallet() {
                     style="
                         width: 48px;
                         height: 38px;
-                        background-color: #310b51;
+                        background-color: #29333d;
                         margin-right: 9px;
                         border-radius: 9px;
                         display: flex;
@@ -532,9 +532,9 @@ function restoreWallet() {
                         :show="true"
                         :percentage="percentage"
                         style="
-                            border: 1px solid #932ecd;
+                            border: 1px solid #545454;
                             border-radius: 4px;
-                            background-color: #2b003a;
+                            background-color: #29333d;
                         "
                     ></LoadingBar>
                 </div>
@@ -546,11 +546,11 @@ function restoreWallet() {
                 style="
                     display: flex;
                     font-size: 15px;
-                    background-color: #3a0c60;
-                    border: 1px solid #9f00f9;
+                    background-color: #3a3e42;
+                    border: 1px solid #545454;
                     padding: 8px 15px 10px 15px;
                     border-radius: 10px;
-                    color: #d3bee5;
+                    color: #f1f1f1;
                     width: 310px;
                     text-align: left;
                     margin-bottom: 20px;
@@ -560,7 +560,7 @@ function restoreWallet() {
                     style="
                         width: 48px;
                         height: 38px;
-                        background-color: #310b51;
+                        background-color: #545454;
                         margin-right: 9px;
                         border-radius: 9px;
                     "
@@ -577,9 +577,9 @@ function restoreWallet() {
                         :show="true"
                         :percentage="txPercentageCreation"
                         style="
-                            border: 1px solid #932ecd;
+                            border: 1px solid #545454;
                             border-radius: 4px;
-                            background-color: #2b003a;
+                            background-color: #3a3e42;
                         "
                     ></LoadingBar>
                 </div>
